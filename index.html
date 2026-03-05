@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Inteligência Tecnológica | Foco Digital</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-green: #4ade80;
+            --accent-orange: #fb923c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(192, 132, 252, 0.1), transparent 40%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        /* Staggered animation delays */
+        .card:nth-child(1) { animation-delay: 0.1s; border-top: 4px solid var(--accent-blue); }
+        .card:nth-child(2) { animation-delay: 0.2s; border-top: 4px solid var(--accent-green); }
+        .card:nth-child(3) { animation-delay: 0.3s; border-top: 4px solid var(--accent-orange); }
+        .card:nth-child(4) { animation-delay: 0.4s; border-top: 4px solid var(--accent-purple); }
+        .card:nth-child(5) { animation-delay: 0.5s; border-top: 4px solid #f43f5e; }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .tag-mobile { color: var(--accent-blue); }
+        .tag-health { color: var(--accent-green); }
+        .tag-tech { color: var(--accent-orange); }
+        .tag-drone { color: var(--accent-purple); }
+        .tag-ai { color: #f43f5e; }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        .card ul li {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '•';
+            color: var(--accent-blue);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Highlight effects for specific keywords */
+        .highlight {
+            color: #fff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="date-badge">4 de Março de 2026</div>
+        <h1>Foco Digital</h1>
+        <div class="subtitle">Relatório Diário de Inteligência Tecnológica</div>
+    </header>
+
+    <main class="grid-container">
+        
+        <article class="card">
+            <span class="card-tag tag-mobile">Smartphones</span>
+            <h2>O Pós-MWC: O Duelo Samsung vs. Xiaomi</h2>
+            <p>O mercado europeu recebe as duas maiores inovações móveis do ano. A privacidade dinâmica contra a força bruta do hardware fotográfico.</p>
+            <ul>
+                <li><span class="highlight">Galaxy S26 Ultra:</span> O novo ecrã "Privacy Display" escurece ângulos laterais através de IA para proteger dados confidenciais em público.</li>
+                <li><span class="highlight">Xiaomi 17 Ultra:</span> Estreia global da bateria de silício-carbono de 6.000 mAh e câmara periscópica de 200 MP com qualidade DSLR.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-health">Saúde Digital</span>
+            <h2>Marco Histórico: O Fim da Insulina?</h2>
+            <p>A ciência da medicina regenerativa em Xangai atinge um ponto de viragem, oferecendo esperança concreta para milhões de pacientes.</p>
+            <ul>
+                <li><span class="highlight">Células Estaminais:</span> Um paciente com Diabetes Tipo 2 conseguiu restaurar a produção de insulina e encontra-se há 33 meses sem necessidade de injeções.</li>
+                <li><span class="highlight">IA Screenome:</span> Stanford lança plataforma para detetar padrões de saúde física e mental apenas pelos rastos digitais no telemóvel.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-drone">Drones & Captura</span>
+            <h2>DJI Avata 360: "A Nova Dimensão"</h2>
+            <p>A DJI libertou o <em>teaser</em> oficial do novo drone FPV. Para quem já domina a criação de vídeo com gimbals e drones ultracompactos, esta é a evolução natural para não perder nenhum ângulo durante a gravação.</p>
+            <ul>
+                <li><span class="highlight">Vídeo Esférico:</span> Confirmação de captação em 8K/60fps com integração nativa de sensores 360.</li>
+                <li><span class="highlight">Mercado:</span> Com preço estimado de 499$, visa eliminar a necessidade de acoplar câmaras externas de ação aos drones.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-tech">Tech & Indústria</span>
+            <h2>Robôs nas Fábricas e Óculos Inteligentes</h2>
+            <p>A robótica funde-se com a automação diária, e os wearables de nova geração começam a substituir ecrãs tradicionais.</p>
+            <ul>
+                <li><span class="highlight">Estagiários Mecânicos:</span> A Xiaomi colocou os seus robôs humanoides a realizar tarefas de precisão nas linhas de montagem de carros elétricos.</li>
+                <li><span class="highlight">Alibaba Qwen S1:</span> Óculos inteligentes com tradução em tempo real no visor e leitura de ambiente controlada por gestos manuais.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-ai">Inteligência Artificial</span>
+            <h2>A Convergência Apple e Google</h2>
+            <p>Um movimento tectónico na indústria que redefine o panorama dos assistentes virtuais em milhões de dispositivos.</p>
+            <ul>
+                <li><span class="highlight">Parceria Milionária:</span> A Apple oficializa a integração nativa dos modelos Gemini da Google na Siri.</li>
+                <li><span class="highlight">Objetivo:</span> Elevar a capacidade de raciocínio da assistente da Apple, processando grande parte dos pedidos sensíveis diretamente no processador A19 localmente.</li>
+            </ul>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>Gerado para o Briefing Diário | <strong>Foco Digital</strong> - Inovação sem rodeios.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Inteligência Tecnológica | Foco Digital</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-green: #4ade80;
+            --accent-orange: #fb923c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(192, 132, 252, 0.1), transparent 40%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; border-top: 4px solid var(--accent-blue); }
+        .card:nth-child(2) { animation-delay: 0.2s; border-top: 4px solid var(--accent-green); }
+        .card:nth-child(3) { animation-delay: 0.3s; border-top: 4px solid var(--accent-orange); }
+        .card:nth-child(4) { animation-delay: 0.4s; border-top: 4px solid var(--accent-purple); }
+        .card:nth-child(5) { animation-delay: 0.5s; border-top: 4px solid #f43f5e; }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .tag-mobile { color: var(--accent-blue); }
+        .tag-health { color: var(--accent-green); }
+        .tag-tech { color: var(--accent-orange); }
+        .tag-drone { color: var(--accent-purple); }
+        .tag-pt { color: #f43f5e; }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        .card ul li {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '•';
+            color: var(--accent-blue);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .archive-section {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .archive-btn {
+            color: var(--accent-blue);
+            text-decoration: none;
+            padding: 0.6rem 1.5rem;
+            border: 1px solid var(--accent-blue);
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .archive-btn:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="date-badge">6 de Março de 2026</div>
+        <h1>Foco Digital</h1>
+        <div class="subtitle">Resumo da Semana: Inteligência Tecnológica</div>
+    </header>
+
+    <main class="grid-container">
+        
+        <article class="card">
+            <span class="card-tag tag-mobile">Mercado Móvel</span>
+            <h2>O Pós-MWC: Apple, Samsung e Xiaomi</h2>
+            <p>O mercado europeu consolida as inovações apresentadas no início do ano, com foco em parcerias estratégicas e privacidade.</p>
+            <ul>
+                <li><span class="highlight">Apple + Gemini:</span> Integração confirmada para a Europa. Processamento sensível no chip A19; raciocínio complexo delegado à Google.</li>
+                <li><span class="highlight">S26 Ultra & 17 Ultra:</span> O ecrã "antifofoca" da Samsung lidera vendas corporativas, enquanto a Xiaomi distribui o seu sensor de 200MP pelas lojas europeias.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-health">Saúde Digital</span>
+            <h2>Diagnóstico Passivo e Sucesso CRISPR</h2>
+            <p>A tecnologia médica foca-se na deteção precoce silenciosa e na cura genética de doenças crónicas.</p>
+            <ul>
+                <li><span class="highlight">O "Screenome":</span> Stanford usa a hesitação de digitação no telemóvel para detetar sinais de Alzheimer e Parkinson.</li>
+                <li><span class="highlight">Diabetes Tipo 1:</span> Dados de Xangai confirmam 90% de taxa de sucesso na produção autónoma de insulina após 2 anos de terapia genética.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-tech">Indústria & Hardware</span>
+            <h2>Robôs nas Fábricas e Chips de 3nm</h2>
+            <p>A automação atinge um novo patamar de independência, tanto no chão de fábrica como na produção de silício.</p>
+            <ul>
+                <li><span class="highlight">Humanoides Xiaomi:</span> Aprendem a montar peças de carros elétricos por observação visual, sem necessidade de código manual.</li>
+                <li><span class="highlight">Independência Asiática:</span> A SMIC e a Huawei aumentaram a produção de chips de 3nm, contornando totalmente as sanções ocidentais.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-drone">Drones & Imagem</span>
+            <h2>A Confirmação do DJI Avata 360</h2>
+            <p>A DJI está pronta para revolucionar a captura imersiva na próxima semana, unindo o voo FPV à gravação esférica nativa.</p>
+            <ul>
+                <li><span class="highlight">Captura Invisível:</span> Duas lentes de 1.1" gravam a 8K/60fps sem que o corpo do drone apareça na imagem.</li>
+                <li><span class="highlight">O4 Plus:</span> Novo protocolo garante vídeo de baixíssima latência mesmo em áreas urbanas saturadas por redes Wi-Fi 7 e 5G.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-pt">Portugal & Europa</span>
+            <h2>Novos Centros de Dados Multimodais</h2>
+            <p>A infraestrutura nacional adapta-se às exigências da nova legislação europeia de Inteligência Artificial.</p>
+            <ul>
+                <li><span class="highlight">Processamento Local:</span> Instalação de novos nós de IA em Portugal para garantir que dados multimodais sensíveis não saem do espaço europeu.</li>
+            </ul>
+        </article>
+
+        <div class="archive-section">
+            <h3 style="color: var(--text-muted); margin-bottom: 1rem;">Explorar Edições Anteriores</h3>
+            <a href="episodio-05-mar.html" class="archive-btn">
+                ← Ler edição de 5 de Março
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Gerado para o Briefing Diário | <strong>Foco Digital</strong> - Inovação sem rodeios.</p>
+    </footer>
+
+</body>
+</html>

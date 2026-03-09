@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Inteligência Tecnológica | Foco Digital</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-green: #4ade80;
+            --accent-orange: #fb923c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(192, 132, 252, 0.1), transparent 40%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:nth-child(1) { border-top: 4px solid var(--accent-blue); }
+        .card:nth-child(2) { border-top: 4px solid var(--accent-purple); }
+        .card:nth-child(3) { border-top: 4px solid var(--accent-orange); }
+        .card:nth-child(4) { border-top: 4px solid var(--accent-green); }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .tag-mobile { color: var(--accent-blue); }
+        .tag-health { color: var(--accent-green); }
+        .tag-tech { color: var(--accent-orange); }
+        .tag-drone { color: var(--accent-purple); }
+        .tag-pt { color: #f43f5e; }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        .card ul li {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '•';
+            color: var(--accent-blue);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .archive-section {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .archive-btn {
+            color: var(--accent-blue);
+            text-decoration: none;
+            padding: 0.6rem 1.5rem;
+            border: 1px solid var(--accent-blue);
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .archive-btn:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="date-badge">9 de Março de 2026</div>
+        <h1>Foco Digital</h1>
+        <div class="subtitle">Relatório Diário de Inteligência Tecnológica</div>
+    </header>
+
+    <main class="grid-container">
+        
+        <article class="card">
+            <span class="card-tag tag-mobile">Hardware & Mobile</span>
+            <h2>IA Agêntica e Segurança de Dados</h2>
+            <p>Os novos processadores prometem autonomia total, enquanto o software garante que a privacidade não é comprometida.</p>
+            <ul>
+                <li><span class="highlight">Snapdragon X105:</span> Foco em IA Agêntica (execução autónoma de tarefas) e suporte para conectividade de emergência via satélite.</li>
+                <li><span class="highlight">Samsung Knox KEEP:</span> Novo sistema que isola dados ao nível da aplicação, protegendo a privacidade dos assistentes de IA nativos.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-drone">Drones & Imagem</span>
+            <h2>A Ofensiva de Março da DJI</h2>
+            <p>O mercado de captação de imagem prepara-se para uma revolução com múltiplos lançamentos confirmados e fugas de informação robustas.</p>
+            <ul>
+                <li><span class="highlight">Avata 360:</span> Teaser oficial confirma fusão de voo FPV com captura esférica. Preço estimado do combo ronda os 999$.</li>
+                <li><span class="highlight">DJI Lito 1:</span> Novo drone sub-250g introduz o protocolo O5, capaz de atingir mais de 20 km de alcance de transmissão.</li>
+                <li><span class="highlight">Pocket 4 Standard:</span> Lançamento agendado para 26 de março com ecrã OLED de 2 polegadas e luz LED integrada.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-tech">Robótica & Wearables</span>
+            <h2>Óculos de 500$ e Expressões Humanas</h2>
+            <p>A tecnologia aproxima-se do utilizador através de interações mais naturais e processamento local mais potente.</p>
+            <ul>
+                <li><span class="highlight">Alibaba Qwen S1:</span> Óculos inteligentes com ecrã monocromático, tradução em tempo real e visão artificial.</li>
+                <li><span class="highlight">Humanoides Realistas:</span> Novos protótipos chineses exibem expressões faciais desenhadas para atendimento ao público.</li>
+                <li><span class="highlight">Aumento das NPUs:</span> Processadores expandem o processamento neural local para edição de vídeo 8K e traduções sem necessidade de internet.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <span class="card-tag tag-pt">Saúde Digital & Portugal</span>
+            <h2>As Novas Regras da IA Médica</h2>
+            <p>A infraestrutura de saúde avança para o digital, mas com linhas vermelhas claras sobre a decisão clínica.</p>
+            <ul>
+                <li><span class="highlight">SIMH 2.0:</span> Serviços Partilhados do Ministério da Saúde apostam na interoperabilidade de dados para diagnósticos precoces.</li>
+                <li><span class="highlight">O "Julgador Crítico":</span> Novo marco regulatório define que a IA é apenas uma ferramenta de triagem, mantendo o médico humano como o decisor final.</li>
+            </ul>
+        </article>
+
+        <div class="archive-section">
+            <h3 style="color: var(--text-muted); margin-bottom: 1rem;">Explorar Edições Anteriores</h3>
+            <a href="episodio-08-mar.html" class="archive-btn">
+                ← Ler edição de 8 de Março
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Gerado para o Briefing Diário | <strong>Foco Digital</strong> - Inovação sem rodeios.</p>
+    </footer>
+
+</body>
+</html>
